@@ -1,0 +1,11 @@
+import express from "express";
+import {registerUser, loginUser, getUser} from "../controller/authController.js"
+import protect from "../middleware/authmiddleware.js";
+import admin from "../middleware/adminmiddleware.js";
+const router = express.Router();
+
+router.post("/register", registerUser)
+router.post("/login", loginUser)
+router.get("/users", protect, admin, getUser)
+
+export default router;
