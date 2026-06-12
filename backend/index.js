@@ -53,8 +53,8 @@ app.use("/api/payment", paymentRoutes)
 app.use("/api/analytics" , analyticsRoutes )
 
 const PORT = process.env.PORT || 5000;
-ConnectDb()
 
 app.listen(PORT, ()=>{
-    console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
+  ConnectDb()
 })
