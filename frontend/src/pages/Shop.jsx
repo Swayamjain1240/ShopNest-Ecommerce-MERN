@@ -10,7 +10,7 @@ const Shop = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch('/api/products');
+        const res = await fetch('/api/product');
         const data = await res.json();
         setProducts(Array.isArray(data) ? data : []);
       } catch (error) {

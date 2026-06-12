@@ -47,14 +47,14 @@ if (process.env.NODE_ENV === 'production') {
 
 
 app.use("/api/auth", authRoutes)
-app.use("/api/products",productRoutes )
+app.use("/api/product",productRoutes )
 app.use("/api/orders", orderRoutes)
 app.use("/api/payment", paymentRoutes)
 app.use("/api/analytics" , analyticsRoutes )
 
 const PORT = process.env.PORT || 5000;
+ConnectDb()
 
 app.listen(PORT, ()=>{
   console.log(`Server is running on port ${PORT}`);
-  ConnectDb()
 })
